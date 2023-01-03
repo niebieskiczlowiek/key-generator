@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/styles.css">
+<title>Sign</title>
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Import file to sign</h1>
+    <span>
+        <form action="/signer" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Upload">
+        </form>
+    </span>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/styles.css">
+<title>Verify</title>
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Import private or public key</h1>
+    <p>(Private/Public + .pem filename required)</p>
+    {{ message }}
+    <span>
+        <form action="/verifier" method="POST" enctype="multipart/form-data">
+            <label for="file">Original File</label>
+            <input type="file" name="file">
+            <label for="file">Signed File</label>
+            <input type="file" name="file">
+            <label for="file">Public Key</label>
+            <input type="file" name="file">
+            <input type="submit" value="Upload">
+        </form>
+    </span>
+</div>
+{% endblock %}

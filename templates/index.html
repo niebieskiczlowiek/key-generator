@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/styles.css">
+<title>Generate</title>
+{% endblock %}
+
+{% block body %}
+<div>
+    <span>
+        <a href="/generating" > Generating</a>
+        <a href="/signing" > Sign (keys required)</a>
+        <a href="upload">Import own keys</a>
+        <a href="clear">Clear keys</a>
+        <a href="list">View current keys</a>
+    </span>
+</div>
+{% endblock %}

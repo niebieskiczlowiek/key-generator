@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/styles.css">
+<title>Generate</title>
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1>{{ message }}</h1>
+    {% for key in keys %}
+        <p> {{key}} </p>
+    {% endfor %}
+</div>
+{% endblock %}
