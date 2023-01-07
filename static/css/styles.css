@@ -1,4 +1,65 @@
-span {
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&family=Roboto:wght@300&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.container{
     display: flex;
     flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    width: 20%;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.item {
+    background-color: #8aa18b; /* Green */
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-box-shadow: inset 3px 7px 32px -11px rgba(138, 174, 136, 1);
+    -moz-box-shadow: inset 3px 7px 32px -11px rgba(138, 174, 136, 1);
+    box-shadow: inset 3px 7px 32px -11px rgba(138, 174, 136, 1); 
+}
+
+.header {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.message {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.upload{
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    margin: auto;
+}
+
+.input {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
 }

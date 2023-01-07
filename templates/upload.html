@@ -2,18 +2,19 @@
 
 {% block head %}
 <link rel="stylesheet" href="/static/css/styles.css">
-<title>Generate</title>
+<title>Upload</title>
 {% endblock %}
 
 {% block body %}
 <div>
-    <h1>Import private or public key</h1>
-    <p>(Private/Public + .pem filename required)</p>
-    <span>
+    <h1 class="header">Import private or public key</h1>
+    <p class="message">(Private/Public + .pem filename required)</p>
+    <div class="container">
         <form action="/uploader" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file">
-            <input type="submit" value="Upload">
+            <input type="file" name="file" class="input">
+            <input type="submit" value="Upload" class="button">
+            <p class="message">{{message}}</p>
         </form>
-    </span>
+    </div>
 </div>
 {% endblock %}

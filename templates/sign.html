@@ -7,12 +7,12 @@
 
 {% block body %}
 <div>
-    <h1>Import file to sign</h1>
-    <span>
+    <h1 class="header">Import file to sign</h1>
+    <div class="container">
         <form action="/signer" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file">
-            <input type="submit" value="Upload">
+            <input type="file" name="file" class="input">
+            <input type="submit" value="Sign" class="button">
         </form>
-    </span>
+    </div>
 </div>
 {% endblock %}

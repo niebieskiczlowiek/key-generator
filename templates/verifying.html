@@ -7,19 +7,28 @@
 
 {% block body %}
 <div>
-    <h1>Import private or public key</h1>
-    <p>(Private/Public + .pem filename required)</p>
-    {{ message }}
-    <span>
+    <h1 class="header">Verify your signed file</h1>
+    <div class="message">
+        <p class="">(Private/Public + .pem filename required)</p>
+    </div>
+    <div class="container">
         <form action="/verifier" method="POST" enctype="multipart/form-data">
-            <label for="file">Original File</label>
-            <input type="file" name="file">
-            <label for="file">Signed File</label>
-            <input type="file" name="file">
-            <label for="file">Public Key</label>
-            <input type="file" name="file">
-            <input type="submit" value="Upload">
+            <div class="upload">
+                <label for="file">Original File</label>
+                <input type="file" name="file" class="input">
+            </div>
+            <div class="upload">
+                <label for="file">Signed File</label>
+                <input type="file" name="file" class="input">
+            </div>
+            <div class="upload">
+                <label for="file">Public Key</label>
+                <input type="file" name="file" class="input">
+            </div>
+            <input type="submit" value="Verify" class="button">
+
+            <p class="message">{{ message }}</p>
         </form>
-    </span>
+    </div>
 </div>
 {% endblock %}

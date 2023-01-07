@@ -2,14 +2,16 @@
 
 {% block head %}
 <link rel="stylesheet" href="/static/css/styles.css">
-<title>Generate</title>
+<title>Active Keys</title>
 {% endblock %}
 
 {% block body %}
 <div>
-    <h1>{{ message }}</h1>
+    <h1 class="header">{{ message }}</h1>
+    <div class="container">
     {% for key in keys %}
-        <p> {{key}} </p>
+        <p class="item"> {{key}} </p>
     {% endfor %}
+    </div>
 </div>
 {% endblock %}

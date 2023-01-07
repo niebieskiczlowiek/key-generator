@@ -69,9 +69,9 @@ def uploader():
     if request.method == 'POST':
         # check if the post request has the file part
         f = request.files['file']
-        # if f.filename != 'private.pem' or f.filename != 'public.pem':
-        #     return redirect('/upload')
-
+        if f.filename != 'private.pem' or f.filename != 'public.pem':
+            message = 'Import failed'
+            return render_template('upload.html', message=message)
         f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
         return redirect('/upload')
     else:
@@ -142,11 +142,11 @@ def verifier():
 
         try: 
             if verifyFile(key, signature, file):
-                message = "File is valid"
+                message = "Verification passed"
             else:
-                message = "File is invalid"
+                message = "Verification failed"
         except:
-            message = "File is invalid"
+            message = "Verification failed"
             
         @after_this_request
         def purge(response):
@@ -159,13 +159,6 @@ def verifier():
         return render_template('verifying.html', message=message)
     else:
         return redirect('/verify')
-        
-
-    # ogFile, sigFile, key = uploaded_files
-    # ogFile.save(os.path.join(app.config['UPLOAD_FOLDER2'], secure_filename(ogFile.filename)))
-    # sigFile.save(os.path.join(app.config['UPLOAD_FOLDER2'], secure_filename(sigFile.filename)))
-    # key.save(os.path.join(app.config['UPLOAD_FOLDER2'], secure_filename(key.filename)))
-    return redirect('/verify')
 
 if __name__ == "__main__":
         app.run(debug=True)

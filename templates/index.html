@@ -2,17 +2,18 @@
 
 {% block head %}
 <link rel="stylesheet" href="/static/css/styles.css">
-<title>Generate</title>
+<title>Generator</title>
 {% endblock %}
 
 {% block body %}
 <div>
-    <span>
-        <a href="/generating" > Generating</a>
-        <a href="/signing" > Sign (keys required)</a>
-        <a href="upload">Import own keys</a>
-        <a href="clear">Clear keys</a>
-        <a href="list">View current keys</a>
-    </span>
+    <h1 class="header">Generator</h1>
+    <div class="container">
+        <a class="button" href="/signing" > Sign (keys required)</a>
+        <a class="button" href="/generating" > Generating</a>
+        <a class="button" href="upload">Import own keys</a>
+        <a class="button" href="clear">Clear keys</a>
+        <a class="button" href="list">View current keys</a>
+    </div>
 </div>
 {% endblock %}
